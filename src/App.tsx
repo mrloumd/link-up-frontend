@@ -1,10 +1,14 @@
-import LandingPage from "./pages/LandingPage";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./components/landingpage/LandingPage";
 function App() {
   return (
-    <main>
-      <LandingPage />
-    </main>
+    <>
+      <Router>
+        <Routes>
+          <Route path='/' element={<LandingPage />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
