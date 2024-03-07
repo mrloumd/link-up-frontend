@@ -1,6 +1,7 @@
 export type UserData = {
   firstName: string;
   lastName: string;
+  username: string;
   email: string;
   password: string;
   age?: number | null;
