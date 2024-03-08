@@ -1,9 +1,9 @@
 export type UserData = {
-  firstName: string;
-  lastName: string;
-  username: string;
-  email: string;
-  password: string;
+  firstName?: string;
+  lastName?: string;
+  username?: string;
+  email?: string;
+  password?: string;
   age?: number | null;
   birthday?: Date | null;
   gender?: string | null;
