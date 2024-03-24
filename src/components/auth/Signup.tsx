@@ -16,7 +16,7 @@ function Signup() {
     password2: "",
   });
 
-  //Destructure the fields
+  //** Destructure the fields */
   const { firstName, lastName, username, email, password, password2 } =
     formData;
 
@@ -49,12 +49,12 @@ function Signup() {
       };
 
       try {
-        // Dispatch the register action
+        //** Dispatch the register action */
         await dispatch(register(userData) as any);
 
-        // Check if registration was successful
+        //** Check if registration was successful */
         if (!isError) {
-          // Reset the form fields
+          //** Reset the form fields */
           setFormData({
             firstName: "",
             lastName: "",
@@ -64,12 +64,12 @@ function Signup() {
             password2: "",
           });
 
-          // Close the signup modal
+          //** Close the signup modal */
           if (signupModal) {
             signupModal.close();
           }
 
-          // Perform any other actions after successful registration
+          //** Perform any other actions after successful registration */
         }
       } catch (error) {
         console.error("Registration error:", error);
@@ -77,7 +77,7 @@ function Signup() {
     }
   };
 
-  // Logic to open the login modal and close the signup modal
+  //** Logic to open the login modal and close the signup modal */
   useEffect(() => {
     if (isSuccess && loginModal && signupModal) {
       loginModal.showModal();
@@ -87,9 +87,9 @@ function Signup() {
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prevState) => ({
-      //spread across the prev state
+      //** spread across the prev state */
       ...prevState,
-      //get the key whatever the name value is
+      //** get the key whatever the name value is */
       [e.target.name]: e.target.value,
     }));
   };
@@ -290,14 +290,14 @@ function Signup() {
                   </b>
                 </button>
               </div>
-              <div className='flex flex-col gap-2 mt-5'>
+              {/* <div className='flex flex-col gap-2 mt-5'>
                 <Link
                   to={"/"}
                   className=' w-full relative text-bold text-sm no-underline text-cornflowerblue text-left'
                 >
                   Already have an account?
                 </Link>
-              </div>
+              </div> */}
             </form>
           </div>
         </div>

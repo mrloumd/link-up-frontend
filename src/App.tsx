@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import LandingPage from "./components/landingpage/LandingPage";
-import HomePage from "./components/homepage/HomePage";
+import HomePage from "./components/homepage";
 import { useSelector } from "react-redux";
 import { RootState } from "./app/store";
 

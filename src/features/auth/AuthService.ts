@@ -1,13 +1,13 @@
-//the service is strictly for just making the http request
-//sending the data  back and setting any the data in local storage
+//** the service is strictly for just making the http request */
+//** sending the data  back and setting any the data in local storage */
 
-//axios is for http request
+//** axios is for http request */
 import axios from "axios";
 import { UserData } from "../types";
 
 const API_URL = "http://localhost:5000/api/users/";
 
-// Register user
+//** Register user */
 const register = async (userData: UserData) => {
   const response = await axios.post(API_URL, userData);
 
@@ -18,7 +18,7 @@ const register = async (userData: UserData) => {
   return response.data;
 };
 
-// Login user
+//** Login user */
 const login = async (userData: UserData) => {
   const response = await axios.post(API_URL + "login", userData);
   console.log("Login response:", response);
@@ -29,7 +29,7 @@ const login = async (userData: UserData) => {
   return response.data;
 };
 
-//Logout user
+//** Logout user */
 const logout = () => {
   localStorage.removeItem("user");
 };

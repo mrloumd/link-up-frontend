@@ -36,18 +36,18 @@ function Login() {
     };
 
     try {
-      // Dispatch the login action
+      //** Dispatch the login action */
       await dispatch(login(userData) as any);
 
-      // Check if login was successful
+      //** Check if login was successful */
       if (!isError) {
-        // Reset the form fields
+        //** Reset the form fields */
         setFormData({
           username: "",
           password: "",
         });
 
-        // Redirect to the homepage
+        //** Redirect to the homepage */
         navigate("/home");
       }
     } catch (error) {
@@ -161,12 +161,12 @@ function Login() {
                 >
                   Forgot password?
                 </Link>
-                <Link
+                {/* <Link
                   to={"/"}
                   className=' w-full relative text-bold text-sm no-underline text-cornflowerblue text-left'
                 >
                   Don't have an account?
-                </Link>
+                </Link> */}
               </div>
             </form>
           </div>
