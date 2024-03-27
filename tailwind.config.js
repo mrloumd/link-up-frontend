@@ -10,6 +10,7 @@ module.exports = {
         black: "#000",
         silver: "#c4c4c4",
         gray: "#919191",
+        card: "#F8F8F8",
       },
       spacing: {},
       fontFamily: {
@@ -32,8 +33,17 @@ module.exports = {
       inherit: "inherit",
     },
     screens: {
+      mq1920: {
+        raw: "screen and (max-width: 1920px)",
+      },
+      mq1600: {
+        raw: "screen and (max-width: 1600px)",
+      },
       mq1275: {
         raw: "screen and (max-width: 1275px)",
+      },
+      mq1190: {
+        raw: "screen and (max-width: 1190px)",
       },
       mq750: {
         raw: "screen and (max-width: 750px)",

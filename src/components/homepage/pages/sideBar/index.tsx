@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../../features/auth/authSlice";
-import { RootState } from "../../../app/store"; // Assuming this is the path to your RootState
+import { logout } from "../../../../features/auth/authSlice";
+import { RootState } from "../../../../app/store"; // Assuming this is the path to your RootState
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +12,6 @@ import {
   faBell,
   faMessage,
   faGear,
-  faG,
 } from "@fortawesome/free-solid-svg-icons";
 
 interface SideBarProps {
@@ -30,7 +29,7 @@ function SideBar({ setShowUserProfile }: SideBarProps) {
   };
 
   return (
-    <div className='w-[50%] flex flex-col p-5 text-lg'>
+    <div className=' flex flex-col p-5 text-lg'>
       <Link to={"/"}>
         <header className='p-5'>LOGO</header>
       </Link>

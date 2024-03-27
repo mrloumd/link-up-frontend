@@ -20,3 +20,19 @@ export type UserData = {
   verified?: boolean;
   change_password?: object;
 };
+
+export type PostData = {
+  _id?: string;
+  description?: string;
+  uploads?: {
+    _id: string;
+    file_name: string;
+    file_path: string;
+  }[];
+  likes?: number;
+  comments?: number;
+  shares?: number;
+  privacy?: { value: string; label: string };
+  archives?: boolean;
+  user_id?: string;
+};
