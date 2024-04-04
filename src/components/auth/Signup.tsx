@@ -77,14 +77,6 @@ function Signup() {
     }
   };
 
-  //** Logic to open the login modal and close the signup modal */
-  useEffect(() => {
-    if (isSuccess && loginModal && signupModal) {
-      loginModal.showModal();
-      signupModal.close();
-    }
-  }, [isSuccess, loginModal, signupModal]);
-
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prevState) => ({
       //** spread across the prev state */

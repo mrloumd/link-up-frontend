@@ -20,13 +20,15 @@ interface SideBarProps {
 
 function SideBar({ setShowUserProfile }: SideBarProps) {
   const dispatch = useDispatch();
-  const user = useSelector((state: RootState) => state.auth.user);
+  const user = useSelector((state: RootState) => state.auth.user.data);
   const navigate = useNavigate();
 
   const handleLogout = () => {
     dispatch(logout() as any);
     navigate("/"); // Navigate to the landing page after logout
   };
+
+  console.log("user");
 
   return (
     <div className=' flex flex-col p-5 text-lg'>
@@ -81,7 +83,7 @@ function SideBar({ setShowUserProfile }: SideBarProps) {
               <a>
                 {" "}
                 <FontAwesomeIcon icon={faUser} className='me-3 py-2' />
-                {user.firstName}
+                {user.username}
               </a>
             </li>
           </ul>

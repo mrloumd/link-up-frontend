@@ -14,6 +14,8 @@ function App() {
   // Get user from Redux store
   const user = useSelector((state: RootState) => state.auth.user);
 
+  console.log("user", user);
+
   return (
     <>
       <Router>

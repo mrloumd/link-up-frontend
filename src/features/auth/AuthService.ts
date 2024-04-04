@@ -34,10 +34,24 @@ const logout = () => {
   localStorage.removeItem("user");
 };
 
+// Update post
+const updateUser = async (userData: UserData, token: string) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.put(API_URL + userData._id, userData, config);
+
+  return response.data;
+};
+
 const authService = {
   register,
   logout,
   login,
+  updateUser,
 };
 
 export default authService;

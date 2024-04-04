@@ -1,4 +1,5 @@
 export type UserData = {
+  _id?: string;
   firstName?: string;
   lastName?: string;
   username?: string;
@@ -19,6 +20,16 @@ export type UserData = {
   followers?: number;
   verified?: boolean;
   change_password?: object;
+  profile_photo?: {
+    _id: string;
+    file_name: string;
+    file_path: string;
+  };
+  background_photo?: {
+    _id: string;
+    file_name: string;
+    file_path: string;
+  };
 };
 
 export type PostData = {
