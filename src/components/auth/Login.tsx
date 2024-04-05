@@ -48,7 +48,7 @@ function Login() {
         });
 
         //** Redirect to the homepage */
-        navigate("/home");
+        navigate("/");
       }
     } catch (error) {
       console.error("Login error:", error);

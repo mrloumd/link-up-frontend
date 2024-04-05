@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../../../app/store";
-import { PostData } from "../../../../features/types";
-import { createPost } from "../../../../features/post/postSlice";
+import { RootState } from "../../app/store";
+import { PostData } from "../../features/types";
+import { createPost } from "../../features/post/postSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,

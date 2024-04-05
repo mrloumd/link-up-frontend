@@ -6,7 +6,10 @@ import {
   Navigate,
 } from "react-router-dom";
 import LandingPage from "./components/landingpage/LandingPage";
-import HomePage from "./components/homepage";
+import HomePage from "./components/homepage/Homepage";
+import UserProfile from "./components/userProfile/UserProfile";
+import SideBar from "./components/sideBar/SideBar";
+import Activity from "./components/activity/Activity";
 import { useSelector } from "react-redux";
 import { RootState } from "./app/store";
 
@@ -17,22 +20,27 @@ function App() {
   console.log("user", user);
 
   return (
-    <>
-      <Router>
-        <Routes>
-          {/* Use a conditional Route to render LandingPage if there is no user */}
+    <Router>
+      <Routes>
+        {!user ? (
+          <Route path='/*' element={<LandingPage />} />
+        ) : (
           <Route
-            path='/'
-            element={!user ? <LandingPage /> : <Navigate to='/home' />}
+            path='/*'
+            element={
+              <main className='h-screen max-h-screen flex justify-center mx-64 mq1600:mx-52 mq1275:mx-36  mq1190:mx-10 font-lato'>
+                <SideBar />
+                <Routes>
+                  <Route path='/' element={<HomePage />} />
+                  <Route path='/profile' element={<UserProfile />} />
+                </Routes>
+                <Activity />
+              </main>
+            }
           />
-          {/* Render HomePage when there is a user */}
-          <Route
-            path='/home'
-            element={user ? <HomePage /> : <Navigate to='/' />}
-          />
-        </Routes>
-      </Router>
-    </>
+        )}
+      </Routes>
+    </Router>
   );
 }
 

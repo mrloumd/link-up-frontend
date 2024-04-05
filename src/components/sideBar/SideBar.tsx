@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../../../features/auth/authSlice";
-import { RootState } from "../../../../app/store"; // Assuming this is the path to your RootState
+import { logout } from "../../features/auth/authSlice";
+import { RootState } from "../../app/store"; // Assuming this is the path to your RootState
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,11 +14,12 @@ import {
   faGear,
 } from "@fortawesome/free-solid-svg-icons";
 
-interface SideBarProps {
-  setShowUserProfile: (value: boolean) => void;
-}
+// interface SideBarProps {
+//   setShowUserProfile: (value: boolean) => void;
+// }
 
-function SideBar({ setShowUserProfile }: SideBarProps) {
+function SideBar() {
+  // { setShowUserProfile }: SideBarProps
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.auth.user.data);
   const navigate = useNavigate();
@@ -63,10 +64,11 @@ function SideBar({ setShowUserProfile }: SideBarProps) {
             </a>
           </li>
           <li>
-            <a onClick={() => setShowUserProfile(true)}>
+            {" "}
+            <Link to={"/profile"} className='no-underline text-inherit'>
               <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
               Profile
-            </a>
+            </Link>
           </li>
           <li>
             <a>

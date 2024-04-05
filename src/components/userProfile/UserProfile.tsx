@@ -1,5 +1,5 @@
 import React from "react";
-import { RootState } from "../../../../app/store"; // Assuming this is the path to your RootState
+import { RootState } from "../../app/store"; // Assuming this is the path to your RootState
 import { useSelector } from "react-redux";
 
 function UserProfile() {
